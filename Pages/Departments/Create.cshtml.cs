@@ -36,6 +36,7 @@ namespace ContosoUniversity.Pages.Departments
                 return Page();
             }
 
+            Department.ConcurrencyToken = Guid.NewGuid();
             _context.Departments.Add(Department);
             await _context.SaveChangesAsync();
 
